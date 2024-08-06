@@ -2,4 +2,6 @@
     <string name="app_name">Task Repo</string>
     <string name="text_body_repo">Shared repository for open-sourced projects from the Google Ai         Language team</string>
     <string name="text_button">Show Issues</string>
+    <string name="back_arrow_appbar">Back Arrow</string>
+    <string name="capture_image_screen_issues_ui">capture_image</string>
 </resources>
