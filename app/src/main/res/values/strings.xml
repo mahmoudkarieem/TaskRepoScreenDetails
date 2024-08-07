@@ -4,4 +4,5 @@
     <string name="text_button">Show Issues</string>
     <string name="back_arrow_appbar">Back Arrow</string>
     <string name="capture_image_screen_issues_ui">capture_image</string>
+    <string name="title_name_issues_screen">Issues</string>
 </resources>

@@ -2,16 +2,19 @@ package com.example.taskrepo.presentation.screens.issues_screen
 
 import AppBar
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.taskrepo.R
 import com.example.taskrepo.presentation.screens.data.CardIssuesUiModel
 import com.example.taskrepo.presentation.screens.issues_screen.components.CardIssuesRepoDetails
 
@@ -80,26 +83,24 @@ fun IssuesScreen() {
         )
     )
 
-    Scaffold(
-        topBar = {
-            AppBar(title = "Issues",
-                titleStyle = MaterialTheme.typography.titleLarge,
-                onBackArrowClicked = {}
-            )
 
-        }
-    ) { paddingValues ->
+    Column(Modifier.fillMaxSize()) {
+        AppBar(
+            title = stringResource(R.string.title_name_issues_screen), showBackArrow = true,
+
+            )
         LazyColumn(
             modifier = Modifier
-                .padding(paddingValues)
-                .padding(horizontal = 16.dp)  .background(MaterialTheme.colorScheme.background).padding(vertical = 10.dp)
+                .background(Color.Gray)
+                .padding(horizontal = 6.dp)
         ) {
             items(fakeRepoData.size) {
-                CardIssuesRepoDetails(cardIssuesUiModel = fakeRepoData[it])
+                CardIssuesRepoDetails(
+                    cardIssuesUiModel = fakeRepoData[it]
+                )
             }
 
         }
-
     }
 
 }

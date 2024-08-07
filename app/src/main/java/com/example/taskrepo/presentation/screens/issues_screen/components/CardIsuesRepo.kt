@@ -32,16 +32,16 @@ fun CardIssuesRepoDetails(
 
     Row(
         horizontalArrangement = Arrangement.Start,
+
         modifier = modifier
-            .padding(15.dp)
+            .padding(top = 8.dp)
 
             .fillMaxWidth()
-            .padding(top = 10.dp, end = 24.dp)
 
 
             .background(
                 color = MaterialTheme.colorScheme.surface,
-                shape = RoundedCornerShape(14.dp)
+                shape = RoundedCornerShape(12.dp)
             )
     ) {
         Image(
@@ -49,26 +49,26 @@ fun CardIssuesRepoDetails(
                 R.string.capture_image_screen_issues_ui
             ),
             modifier = Modifier
+                .padding(top = 12.dp, start = 10.dp)
                 .size(60.dp)
 
         )
-        Column(modifier = Modifier.padding(16.dp)) {
+        Column(modifier = Modifier.padding(start = 10.dp, top = 12.dp)) {
             Text(
 
                 text = cardIssuesUiModel.description,
-                overflow = TextOverflow.Ellipsis,
+                style = MaterialTheme.typography.headlineSmall,
+
                 maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
 
-                fontWeight = FontWeight.Bold,
 
-
-                style = MaterialTheme.typography.titleSmall
-            )
+                )
 
             Text(
 
                 text = cardIssuesUiModel.state,
-                style = MaterialTheme.typography.bodySmall,
+                style = MaterialTheme.typography.titleMedium,
 
                 modifier = Modifier.padding(top = 10.dp)
 
@@ -79,23 +79,24 @@ fun CardIssuesRepoDetails(
                 modifier = Modifier.padding(vertical = 14.dp)
             ) {
                 Text(
-                    text = "Created At:",
-                    style = MaterialTheme.typography.labelSmall,
-                    fontWeight = FontWeight.Bold,
+                    text = "Created At : ",
+                    style = MaterialTheme.typography.titleMedium,
+
 
                     )
                 Text(
                     text = cardIssuesUiModel.createdAt,
-                    style = MaterialTheme.typography.bodySmall,
+                    style = MaterialTheme.typography.titleMedium,
 
                     )
             }
         }
         Spacer(modifier = Modifier.weight(1f))
-        Column(modifier = Modifier.padding(start = 6.dp)) {
+        Column(modifier = Modifier.padding(start = 6.dp, top = 12.dp)) {
             Text(
+                modifier = Modifier.padding(end = 10.dp),
                 text = cardIssuesUiModel.keyIssues,
-                style = MaterialTheme.typography.bodySmall,
+                style = MaterialTheme.typography.bodyMedium,
                 fontWeight = FontWeight.Bold,
 
                 )
